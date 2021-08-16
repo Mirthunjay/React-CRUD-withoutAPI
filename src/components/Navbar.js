@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 function Navbar() {
   //Declaration Of State
@@ -9,15 +10,15 @@ function Navbar() {
   const handleClick = () => setClick(!click);
 
   return (
-    <nav>
+    <nav className="navbar">
       {/* Logo & Title */}
       <Link to="/" className="nav-logo">
-        People Connect <i className="fab fa-pied-piper-alt" />
+        People Connect <i className="fab fa-slack" />
       </Link>
 
       {/* Menu Icon*/}
       <div className="menu-icon" onClick={handleClick}>
-        <i className={click ? "fas fa-bars" : "fas fa-times"} />
+        <i className={click ? "fas fa-times " : "fas fa-bars"} />
       </div>
 
       {/* Menu Items */}
