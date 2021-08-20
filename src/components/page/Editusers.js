@@ -34,7 +34,7 @@ export default function Editusers() {
   useEffect(() => {
     setName(user[id - 1].name);
     setImage(user[id - 1].img);
-  }, []);
+  }, [setImage, setName, user, id]);
 
   return (
     <div className="edit-user">

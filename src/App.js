@@ -8,6 +8,7 @@ import { userDetails } from "./userDetails";
 import { Profiles } from "./components/page/Profiles";
 import Adduser from "./components/page/Adduser";
 import Editusers from "./components/page/Editusers";
+import Contactus from "./components/page/Contactus";
 
 export const context = createContext(null);
 
@@ -35,6 +36,7 @@ function Routing() {
           <Route path="/profile/:id" exact component={Profiles} />
           <Route path="/edit/:id" exact component={Editusers} />
           <Route path="/create" exact component={Adduser} />
+          <Route path="/contact-us" exact component={Contactus} />
         </Switch>
       </context.Provider>
     </Router>
