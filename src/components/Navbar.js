@@ -25,21 +25,21 @@ function Navbar() {
       <ul className={click ? "nav-menu active" : "nav-menu"}>
         {/* Home */}
         <li className="nav-item">
-          <Link to="/" className="nav-link">
+          <Link to="/" className="nav-link" onClick={handleClick}>
             Home
           </Link>
         </li>
 
         {/* users */}
         <li className="nav-item">
-          <Link to="/users" className="nav-link">
+          <Link to="/users" className="nav-link" onClick={handleClick}>
             Users
           </Link>
         </li>
 
         {/* Contact Us */}
         <li className="nav-item">
-          <Link to="/contact-us" className="nav-link">
+          <Link to="/contact-us" className="nav-link" onClick={handleClick}>
             Contact Us
           </Link>
         </li>
