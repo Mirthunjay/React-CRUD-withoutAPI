@@ -10,7 +10,6 @@ export default function Editusers() {
 
   const history = useHistory();
   const { id } = useParams();
-  const indexkey = id;
   const { user, setUser, username, setName, image, setImage } = contextData;
 
   const editUser = () => {
@@ -18,7 +17,8 @@ export default function Editusers() {
       alert("Please enter the value");
     } else {
       const userCopy = [...user];
-      userCopy[indexkey - 1] = {
+      let index = userCopy.findIndex((ele) => ele.id === +id);
+      userCopy[index] = {
         id: +id,
         name: username,
         img: image,
@@ -32,9 +32,18 @@ export default function Editusers() {
   };
 
   useEffect(() => {
-    setName(user[id - 1].name);
-    setImage(user[id - 1].img);
-  }, [setImage, setName, user, id]);
+    const indexData = user.filter((data) => data.id === +id);
+    const { name, img } = indexData[0];
+    // console.log(indexData[0].name);
+    setName(name);
+    setImage(img);
+  }, [id, setImage, setName, user]);
+
+  // useEffect(() => {
+  //   setName(user[id - 1].name);
+  //   setImage(user[id - 1].img);
+
+  // }, [setImage, setName, user, id]);
 
   return (
     <div className="edit-user">
